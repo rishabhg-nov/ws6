@@ -1,0 +1,84 @@
+Script started on 2022-10-18 22:53:47-04:00
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ history -c
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ history
+    1  history
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+******
+(1)
+******
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ DATETIME=$(date)
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+******
+(2)
+******
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ cp ../ws4/PRODUCTS/0385730586.txt PRODUCTS/0385730586."$DATETIME".txt
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+******
+(3)
+******
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ echo 2 >> PRODUCTS/0385730586."$DATETIME".txt
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ cd PRODIC[K[KUCTS
+]0;rishabh@sjsu:~/ws6/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws6/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws6/PRODUCTS[rishabh@sjsu PRODUCTS]$ ls -l
+total 8
+-rw-r--r-- 1 rishabh rishabh 194 Oct 18 22:55  0385730586.AVGRATING.txt
+-rw-rw-r-- 1 rishabh rishabh 621 Oct 18 22:54 '0385730586.Tue Oct 18 22:54:12 EDT 2022.txt'
+]0;rishabh@sjsu:~/ws6/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+******
+(4)
+******
+]0;rishabh@sjsu:~/ws6/PRODUCTS[rishabh@sjsu PRODUCTS]$ ln -s '0385730586.Tue Oct 18 22:54:12 EDT 2022.txt' 0385730586.LATEST.txt
+]0;rishabh@sjsu:~/ws6/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws6/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws6/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws6/PRODUCTS[rishabh@sjsu PRODUCTS]$ cd ..
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+******
+(5)
+******
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ cronta[K[K[K[K[K[Kcrontab -l
+* * * * * ~/ws6/avg.sh > ~/ws6/PRODUCTS/0385730586.AVGRATING.txt  2>&1
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ more avg.sh
+#!/bin/bash
+
+sum=`paste -sd+ ~/ws6/PRODUCTS/0385730586.LATEST.txt | bc`
+numLines=`wc -l ~/ws6/PRODUCTS/0385730586.LATEST.txt | cut -d ' ' -f1`
+
+#echo Sum= $sum
+#echo NL= $numLines
+
+avg=`echo $sum/$numLines | bc -l`
+
+echo $avg
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ history > cmds.log
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ 
+]0;rishabh@sjsu:~/ws6[rishabh@sjsu ws6]$ exit
+
+Script done on 2022-10-18 22:56:32-04:00

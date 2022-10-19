@@ -1,0 +1,11 @@
+    1  history
+    2  DATETIME=$(date)
+    3  cp ../ws4/PRODUCTS/0385730586.txt PRODUCTS/0385730586."$DATETIME".txt
+    4  echo 2 >> PRODUCTS/0385730586."$DATETIME".txt
+    5  cd PRODUCTS
+    6  ls -l
+    7  ln -s '0385730586.Tue Oct 18 22:54:12 EDT 2022.txt' 0385730586.LATEST.txt
+    8  cd ..
+    9  crontab -l
+   10  more avg.sh
+   11  history > cmds.log
